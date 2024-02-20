@@ -1,4 +1,7 @@
 import cmath
+import scipy.integrate as integ
+import scipy.special as special
+
 def fact(n):
 	a = 1
 	for i in range(1, n+1):
@@ -32,8 +35,9 @@ def integrate(function, lower, upper):
 		you'll probably need the 'eval' function to evaluate the function
 		to integrate given as a string.
 	"""
-	pass
+	result = integ.quad(lambda x: eval(function), lower, upper)
 
+	return result
 
 if __name__ == '__main__':
 	print(fact(5))
